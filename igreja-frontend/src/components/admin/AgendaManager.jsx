@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import api from '../../services/api';
 import { Trash2, PlusCircle, Calendar as CalendarIcon, Clock, Edit3, XCircle, Save } from 'lucide-react';
 import toast from 'react-hot-toast';
