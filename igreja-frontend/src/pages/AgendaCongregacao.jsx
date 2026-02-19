@@ -23,16 +23,24 @@ const AgendaCongregacao = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    const hoje = new Date();
-    const dataInicio = new Date(hoje);
     
-    const dataFim = new Date(hoje);
-    dataFim.setMonth(hoje.getMonth() + 1);
-    dataFim.setDate(dataFim.getDate() + 7);
+    const hoje = new Date();
 
-    const start = dataInicio.toISOString().split('T')[0];
-    const end = dataFim.toISOString().split('T')[0];
+    const diaDaSemana = hoje.getDay() || 7; 
+    const dataInicio = new Date(hoje);
+    dataInicio.setDate(hoje.getDate() - (diaDaSemana - 1));
+
+    const dataFim = new Date(dataInicio);
+    dataFim.setDate(dataInicio.getDate() + 7);
+
+    const formatar = (d) => {
+      const mes = String(d.getMonth() + 1).padStart(2, '0');
+      const dia = String(d.getDate()).padStart(2, '0');
+      return `${d.getFullYear()}-${mes}-${dia}`;
+    };
+
+    const start = formatar(dataInicio);
+    const end = formatar(dataFim);
 
     axios.get(`https://api-agenda.up.railway.app/calendario?start=${start}&end=${end}`)
       .then((response) => {

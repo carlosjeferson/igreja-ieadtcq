@@ -46,7 +46,7 @@ function Header() {
 
         {/* NAVEGAÇÃO DESKTOP COM HOVER ANIMADO */}
         <nav className="hidden lg:flex items-center space-x-8">
-          {['Sobre', 'Ministérios', 'Sermões', 'Agenda'].map((item) => (
+          {['Sobre', 'Ministérios', 'Sermões', 'Agenda', 'Contato'].map((item) => (
             <a 
               key={item}
               href={`#${item.toLowerCase()}`} 
@@ -57,10 +57,10 @@ function Header() {
             </a>
           ))}
           <a 
-            href="#contato" 
+            href="https://adatualiza.streamlit.app/" 
             className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-blue-900/20 transition-all active:scale-95"
           >
-            CONTATO
+            CADASTRO
           </a>
         </nav>
 
