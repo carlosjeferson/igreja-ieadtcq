@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import api from '../services/api'; 
+import { Link } from 'react-router-dom';
 
 function Schedule() {
   const [events, setEvents] = useState([]);
@@ -85,6 +86,17 @@ function Schedule() {
             <p className="text-center text-slate-400">Nenhum evento agendado para esta semana.</p>
           )}
         </div>
+
+        {!loading && (
+          <div className="mt-12 flex justify-center">
+            <Link to="/agendacongregacao" className="group">
+              <button className="flex items-center gap-3 bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-black py-4 px-8 rounded-2xl transition-all duration-300 shadow-lg shadow-blue-900/5">
+                <span className="uppercase tracking-widest text-xs">Ver Agenda das Congregações</span>
+                <span className="text-xl group-hover:translate-x-1 transition-transform">→</span>
+              </button>
+            </Link>
+          </div>
+        )}
 
         <div className="mt-12 text-center text-slate-400 text-sm font-medium">
           * Horários sujeitos a alterações em datas comemorativas ou feriados.

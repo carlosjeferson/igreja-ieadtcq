@@ -78,7 +78,11 @@ function Header() {
       </div>
 
       {/* MENU MOBILE COM OVERLAY */}
-      <div className={`lg:hidden absolute w-full bg-blue-950/98 backdrop-blur-xl transition-all duration-500 ease-in-out overflow-hidden ${open ? 'max-h-[400px] border-b border-white/10' : 'max-h-0'}`}>
+      <div className={`lg:hidden absolute w-full top-16 bg-blue-950/98 ${
+        scrolled 
+          ? "bg-blue-950/70 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.3)]" 
+          : "bg-blue-950"
+      }  transition-all duration-500 ease-in-out overflow-hidden ${open ? 'max-h-[400px] border-b border-white/10' : 'max-h-0'}`}>
         <div className="px-8 py-8 flex flex-col space-y-6">
           {['Sobre', 'Ministérios', 'Sermões', 'Agenda', 'Contato'].map((item) => (
             <a 

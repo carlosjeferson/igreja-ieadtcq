@@ -1,5 +1,6 @@
 import React from 'react';
 import fundoPrincipal from '../assets/fundo-principal.jpg';
+import pastor2 from '../assets/pastor2.png';
 
 function Hero() {
   return (

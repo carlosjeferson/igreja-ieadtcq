@@ -6,15 +6,20 @@ function Ministries() {
   const [loading, setLoading] = useState(true);
 
   const getIcon = (nome) => {
-    const n = nome.toLowerCase();
-    if (n.includes('louvor')) return "🎸";
-    if (n.includes('jovens') || n.includes('juventude')) return "🔥";
-    if (n.includes('infantil') || n.includes('crianças')) return "🎨";
-    if (n.includes('casais') || n.includes('família')) return "💍";
-    if (n.includes('social') || n.includes('mãos')) return "🤝";
-    if (n.includes('oração') || n.includes('intercessão')) return "🙏";
-    return "⛪";
-  };
+  const n = nome.toLowerCase();
+
+  if (n.includes('oração') || n.includes('intercessão')) return "🙏";
+  if (n.includes('ebd') || n.includes('ensino') || n.includes('doutrina')) return "📖";
+  if (n.includes('louvor') || n.includes('ensaio') || n.includes('música')) return "🎸";
+  if (n.includes('jovens') || n.includes('juventude') || n.includes('umadeq')) return "🔥";
+  if (n.includes('infantil') || n.includes('crianças') || n.includes('juniores')) return "🎨";
+  if (n.includes('senhoras') || n.includes('círculo de oração')) return "🌹";
+  if (n.includes('família') || n.includes('casais')) return "💍";
+  if (n.includes('recepção') || n.includes('portaria') || n.includes('boas-vindas')) return "🤝";
+  if (n.includes('mídia') || n.includes('som') || n.includes('transmissão')) return "💻";
+  if (n.includes('missões') || n.includes('evangelismo')) return "🌍";
+  return "⛪";
+};
 
   useEffect(() => {
     api.get('/ministerios')
